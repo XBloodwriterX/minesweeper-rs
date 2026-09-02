@@ -1,0 +1,24 @@
+[package]
+name = "minesweeper-rs"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+debug = ["board_plugin/debug", "bevy-inspector-egui"]
+bevy-inspector-egui = ["dep:bevy-inspector-egui"]
+
+[dependencies]
+bevy = { version = "0.18.1", features = ["sprite_picking"] }
+board_plugin = { path = "board_plugin" }
+tracing = "0.1.44"
+tracing-subscriber = "0.3.22"
+
+bevy-inspector-egui = { version = "0.36.0", optional = true }
+fastrand = "2.3.0"
+rand = "0.10.0"
+
+[workspace]
+members = [
+    "board_plugin"
+]
